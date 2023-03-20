@@ -17,15 +17,84 @@ body {
     overflow: hidden;
 }
 
+body.dark {
+    --header-color: darkolivegreen;
+    --content-color: rgb(76, 76, 76);
+}
+
+i {
+    margin-right: 1rem;    
+}
+
+/* dark mode - toggle mod */
+.theme {
+    margin-right:0px;
+    user-select: none;
+  }
+  .label {
+    background-color: var(--light-header);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:10px;
+    border-radius: 50px;
+    height:40px;
+    width: 80px;
+    box-sizing: border-box;
+    position: relative;
+    transform:scale(0.8);
+    transition: background-color 0.2s ease-in;
+    border: solid 2px white;
+    cursor: pointer;
+  }
+  .checkbox {
+    opacity: 0;
+    position: absolute;
+  }
+  #sun {
+    color: rgb(210, 163, 45);
+    transform: scale(1.3);
+    width:24.7px;
+  }
+  #moon {
+    color:rgb(0, 0, 51);
+    transform: scale(1.3);
+  }
+  .ball {
+    position: absolute;
+    width:25px;
+    height:25px;
+    left: 4px;
+    background-color: var(--light-header);
+    border:solid 2px white;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+  }
+  
+  /* plus meaning target the node after it */
+  .checkbox:checked + .label .ball{            
+    transform: translate(37px);
+    background-color: var(--light-header);
+    border:solid 2px white;
+  }
+  .checkbox:checked + label{
+    background-color: var(--light-header);
+  }
+
 #header {
     height: 10vh;
     width: 100%;
     background-color: var(--header-color);
     color: #fff;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     font-family: 'Anton', sans-serif;
+}
+
+#header h1 {
+    margin-left: 20px;
+    font-size: 2rem;
 }
 
 #content {
@@ -33,8 +102,10 @@ body {
     width: 100%;
     background-color: var(--content-color);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
 #search {
@@ -54,7 +125,7 @@ body {
     width: 70%;
     border: none;
     border-radius: 5px;
-    background-color: var(--content-color);
+    background-color: whitesmoke;
     padding: 0 10px;
     font-size: 1.2rem;
 }
@@ -70,4 +141,23 @@ body {
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
+}
+
+#search button:hover {
+    opacity: 90%;
+}
+
+#weather {
+    height: 50%;
+    width: 75%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    background-color: gray;
+    opacity: 90%;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-size: larger;
 }
