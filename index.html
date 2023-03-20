@@ -10,24 +10,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/177d0f9933.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body id="body" class="">
     <div id="main-container">
         <div id="header">
             <div id="logo-name">
                 <h1>Weather.app</h1>
             </div>
+            <div class="theme">
+                <input type="checkbox" class="checkbox" id="checkbox" checked="checked">
+                <label for="checkbox" class="label">
+                    <i class="fa-solid fa-sun" id="sun"></i>
+                    <i class="fa-solid fa-moon" id="moon"></i>
+                    <div class="ball"></div>
+                </label>
+            </div>
         </div>
         <div id="content">
             <div id="search">
-                <input type="text" id="search-input" placeholder="Search for a city">
-                <button id="search-button">Search</button>
+                <input type="text" id="search-input" placeholder="Search for a city" autofocus>
+                <button id="search-btn">Search</button>
             </div>
             <div id="weather">
                 <div id="weather-info">
+                    <!-- icon -->
+                    <img src="" alt="" id="weather-icon">
                     <h2 id="city-name"></h2>
-                    <h3 id="weather-description"></h3>
-                    <h1 id="temperature"></h1>
+                    <h3 id="weather-descrip"></h3>
+                    <h1 id="temp"></h1>
                 </div>
             </div>
         </div>
