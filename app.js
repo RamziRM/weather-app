@@ -14,6 +14,16 @@ searchBtn.addEventListener('click', () => {
   getWeather(locationValue);
 });
 
+// event listener for enter key
+searchInput.addEventListener('keyup', (e) => {
+    if (e.keyCode === 13) {
+        // get value from input
+        const locationValue = searchInput.value;
+        // call api
+        getWeather(locationValue);
+    }
+});
+
 // api key
 const apiKey = 'd686dc120b2947b9a44140830232003';
 
